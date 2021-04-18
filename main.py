@@ -15,13 +15,19 @@ logging.basicConfig(filename="app.log",
 logger=logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-'''
-This Classs Takes Base xml File and does following...
--Parse and extract downloadble links
--Download, extract and save file from links
--For all saved file generate csv from xml with provided columns and conditions
-'''
+
 class XmlToCsv():
+	'''
+	This Classs Takes Base xml File and does following...
+	-Parse and extract downloadble links
+	-Download, extract and save file from links
+	-For all saved file generate csv from xml with provided columns and conditions
+	Params required:
+	:logger: For logging state of program
+	:xmlFile: source xml file containing downloadable links
+	:ndownloads: no of downloads to perform out of downloadable links
+	'''
+	
 	def __init__(self,logger, xmlFile, ndownloads=1 ):
 		self.xmlFile = xmlFile
 
@@ -54,10 +60,11 @@ class XmlToCsv():
 		        self.downloadables.append(temp_download_link)
 		self.logger.info("downloadables link list updated")
 
-	'''
-	Download And Extract zip file to save_path location
-	'''
+	
 	def downloadExtractNSave(self):
+		'''
+		Download And Extract zip file to save_path location
+		'''
 		total_links = len(self.downloadables)
 
 		self.logger.info("Downloading {} out of total {} links".format(self.Ndownloads, total_links))
@@ -105,10 +112,13 @@ class XmlToCsv():
 		        temp_dict[key] = child.text
 		return temp_dict
 
-	'''
-	Extract the required tag to dictionary and return array of such dictionary 
-	'''
 	def getValueViaXpath(self, root, array_items=[]):
+		'''
+		Extract the required tag to dictionary and return array of such dictionary 
+		Arguments:
+		:root: root node element of parsed xml Element Tree
+		:array_items: global storage for extract json
+		'''
 		for node in root.findall("./*/*/*/{urn:iso:std:iso:20022:tech:xsd:auth.036.001.02}FinInstrm/{urn:iso:std:iso:20022:tech:xsd:auth.036.001.02}TermntdRcrd"):
 			temp_dict = {col: None for col in self.columns}
 			for child in node.findall("./"):
@@ -120,12 +130,13 @@ class XmlToCsv():
 
 		return array_items
 
-	'''
-	Function parse saved xml files and generate csv file with same name in same directory
-	'''
 	def xmlToCsv(self):
+		'''
+		Function parse saved xml files and generate csv file with same name in same directory
+		'''
 		self.logger.info("Starting conversion from xml to csv")
 		for xmlFile in self.saved_xml_files:
+			self.logger.info("Generating csv file for {}".format(xmlFile))
 			try:
 				xmlparse = ET.parse(xmlFile)
 				root = xmlparse.getroot()

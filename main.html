@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/dinesh/practice/assesement/XmlToCsv/main.py">/Users/dinesh/practice/assesement/XmlToCsv/main.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="xml.etree.ElementTree.html">xml.etree.ElementTree</a><br>
+<a href="csv.html">csv</a><br>
+</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+<a href="requests.html">requests</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="main.html#XmlToCsv">XmlToCsv</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlToCsv">class <strong>XmlToCsv</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#XmlToCsv">XmlToCsv</a>(logger,&nbsp;xmlFile,&nbsp;ndownloads=1)<br>
+&nbsp;<br>
+This&nbsp;Classs&nbsp;Takes&nbsp;Base&nbsp;xml&nbsp;File&nbsp;and&nbsp;does&nbsp;following...<br>
+-Parse&nbsp;and&nbsp;extract&nbsp;downloadble&nbsp;links<br>
+-Download,&nbsp;extract&nbsp;and&nbsp;save&nbsp;file&nbsp;from&nbsp;links<br>
+-For&nbsp;all&nbsp;saved&nbsp;file&nbsp;generate&nbsp;csv&nbsp;from&nbsp;xml&nbsp;with&nbsp;provided&nbsp;columns&nbsp;and&nbsp;conditions<br>
+Params&nbsp;required:<br>
+:logger:&nbsp;For&nbsp;logging&nbsp;state&nbsp;of&nbsp;program<br>
+:xmlFile:&nbsp;source&nbsp;xml&nbsp;file&nbsp;containing&nbsp;downloadable&nbsp;links<br>
+:ndownloads:&nbsp;no&nbsp;of&nbsp;downloads&nbsp;to&nbsp;perform&nbsp;out&nbsp;of&nbsp;downloadable&nbsp;links<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlToCsv-__init__"><strong>__init__</strong></a>(self, logger, xmlFile, ndownloads=1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="XmlToCsv-downloadExtractNSave"><strong>downloadExtractNSave</strong></a>(self)</dt><dd><tt>Download&nbsp;And&nbsp;Extract&nbsp;zip&nbsp;file&nbsp;to&nbsp;save_path&nbsp;location</tt></dd></dl>
+
+<dl><dt><a name="XmlToCsv-getFinInstrmGnlAttrbts"><strong>getFinInstrmGnlAttrbts</strong></a>(self, node)</dt></dl>
+
+<dl><dt><a name="XmlToCsv-getValueViaXpath"><strong>getValueViaXpath</strong></a>(self, root, array_items=[])</dt><dd><tt>Extract&nbsp;the&nbsp;required&nbsp;tag&nbsp;to&nbsp;dictionary&nbsp;and&nbsp;return&nbsp;array&nbsp;of&nbsp;such&nbsp;dictionary&nbsp;<br>
+Arguments:<br>
+:root:&nbsp;root&nbsp;node&nbsp;element&nbsp;of&nbsp;parsed&nbsp;xml&nbsp;Element&nbsp;Tree<br>
+:array_items:&nbsp;global&nbsp;storage&nbsp;for&nbsp;extract&nbsp;json</tt></dd></dl>
+
+<dl><dt><a name="XmlToCsv-parseXML"><strong>parseXML</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="XmlToCsv-xmlToCsv"><strong>xmlToCsv</strong></a>(self)</dt><dd><tt>Function&nbsp;parse&nbsp;saved&nbsp;xml&nbsp;files&nbsp;and&nbsp;generate&nbsp;csv&nbsp;file&nbsp;with&nbsp;same&nbsp;name&nbsp;in&nbsp;same&nbsp;directory</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>(base_xml, ndownloads)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>logger</strong> = &lt;RootLogger root (DEBUG)&gt;</td></tr></table>
+</body></html>
